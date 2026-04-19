@@ -1,0 +1,210 @@
+Fri Apr 17 07:08:14 PM UTC 2026: 
+ hashmap.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:74:5: error: unknown type name ‘Long’; did you mean ‘long’?
+   74 |     Long aux = hash(key, map->capacity)
+      |     ^~~~
+      |     long
+hashmap.c:75:5: error: expected ‘,’ or ‘;’ before ‘while’
+   75 |     while (map->buckets[aux]->key != NULL){
+      |     ^~~~~
+hashmap.c:74:10: error: unused variable ‘aux’ [-Werror=unused-variable]
+   74 |     Long aux = hash(key, map->capacity)
+      |          ^~~
+cc1: all warnings being treated as errors
+3cd9dc4
+Fri Apr 17 07:08:43 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:75:5: error: expected ‘,’ or ‘;’ before ‘while’
+   75 |     while (map->buckets[aux]->key != NULL){
+      |     ^~~~~
+hashmap.c:74:10: error: unused variable ‘aux’ [-Werror=unused-variable]
+   74 |     long aux = hash(key, map->capacity)
+      |          ^~~
+cc1: all warnings being treated as errors
+4979efe
+Fri Apr 17 07:09:11 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:80:25: error: passing argument 1 of ‘hash’ makes pointer from integer without a cast [-Wint-conversion]
+   80 |         aux = hash((aux + 1),map->capacity);
+      |                    ~~~~~^~~~
+      |                         |
+      |                         long int
+hashmap.c:28:19: note: expected ‘char *’ but argument is of type ‘long int’
+   28 | long hash( char * key, long capacity) {
+      |            ~~~~~~~^~~
+3f16e8b
+Fri Apr 17 07:09:56 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+923d36a
+Fri Apr 17 07:13:19 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:76:48: error: expected ‘)’ before ‘{’ token
+   76 |         if(is_equal(map->buckets[aux]->key,key){
+      |           ~                                    ^
+      |                                                )
+hashmap.c:81:5: error: expected expression before ‘}’ token
+   81 |     }
+      |     ^
+0b15d46
+Fri Apr 17 07:13:46 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+e310034
+Fri Apr 17 07:17:12 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:75:55: error: invalid operands to binary != (have ‘HashMap’ {aka ‘struct HashMap’} and ‘void *’)
+   75 |     while (map->buckets[aux]->key != NULL && map[aux] != NULL){
+      |                                              ~~~~~~~~ ^~
+      |                                                 |
+      |                                                 HashMap {aka struct HashMap}
+c96815c
+Fri Apr 17 07:18:08 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+87b4a62
+Fri Apr 17 07:27:19 PM UTC 2026: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  3|6
+total_score: 10/60
+113ee63
+Sat Apr 18 10:37:38 PM UTC 2026: 
+ hashmap.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:48:1: error: unknown type name ‘Hashmap’; did you mean ‘HashMap’?
+   48 | Hashmap * map = (Hashmap*)malloc(sizeof(Hashmap));
+      | ^~~~~~~
+      | HashMap
+hashmap.c:48:18: error: ‘Hashmap’ undeclared (first use in this function); did you mean ‘HashMap’?
+   48 | Hashmap * map = (Hashmap*)malloc(sizeof(Hashmap));
+      |                  ^~~~~~~
+      |                  HashMap
+hashmap.c:48:18: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:48:26: error: expected expression before ‘)’ token
+   48 | Hashmap * map = (Hashmap*)malloc(sizeof(Hashmap));
+      |                          ^
+hashmap.c:51:8: error: request for member ‘buckets’ in something not a structure or union
+   51 |     map->buckets = (Pair*)calloc(capacity,sizeof(Pair*));
+      |        ^~
+hashmap.c:52:8: error: request for member ‘size’ in something not a structure or union
+   52 |     map->size = 0;
+      |        ^~
+hashmap.c:53:8: error: request for member ‘capacity’ in something not a structure or union
+   53 |     map->capacity = capacity;
+      |        ^~
+hashmap.c:54:8: error: request for member ‘current’ in something not a structure or union
+   54 |     map->current = -1;
+      |        ^~
+hashmap.c:55:12: error: returning ‘int *’ from a function with incompatible return type ‘HashMap *’ {aka ‘struct HashMap *’} [-Wincompatible-pointer-types]
+   55 |     return map;
+      |            ^~~
+d9b7f04
+Sat Apr 18 10:38:29 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  4|5
+total_score: 15/60
+a9953a0
+Sat Apr 18 11:24:07 PM UTC 2026: 
+ hashmap.c | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
+ tests:  0|0
+ef050fb
+Sat Apr 18 11:27:19 PM UTC 2026: 
+ hashmap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  8|3
+total_score: 30/60
+6308a52
+Sat Apr 18 11:29:21 PM UTC 2026: 
+ hashmap.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+ tests:  11|2
+total_score: 40/60
+96cf550
+Sat Apr 18 11:58:10 PM UTC 2026: 
+ hashmap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ tests:  0|0
+9ec7d0b
+Sat Apr 18 11:59:30 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+77048e9
+Sun Apr 19 12:01:55 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 50/60
+3f79975
+Sun Apr 19 12:31:53 AM UTC 2026: 
+ hashmap.c | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:170:5: error: unknown type name ‘pair’; did you mean ‘Pair’?
+  170 |     pair ** borrar = map->buckets;
+      |     ^~~~
+      |     Pair
+hashmap.c:170:22: error: initialization of ‘int **’ from incompatible pointer type ‘Pair **’ [-Wincompatible-pointer-types]
+  170 |     pair ** borrar = map->buckets;
+      |                      ^~~
+hashmap.c:178:41: error: request for member ‘key’ in something not a structure or union
+  178 |         if(borrar[i]!= NULL && borrar[i]->key != NULL){
+      |                                         ^~
+hashmap.c:179:36: error: request for member ‘key’ in something not a structure or union
+  179 |             insertMap(map,borrar[i]->key,borrar[i]->key);
+      |                                    ^~
+hashmap.c:179:51: error: request for member ‘key’ in something not a structure or union
+  179 |             insertMap(map,borrar[i]->key,borrar[i]->key);
+      |                                                   ^~
+d7e489e
+Sun Apr 19 12:32:27 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 50/60
+1b26d9f
+Sun Apr 19 12:35:44 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  17|0
+total_score: 60/60
+199e458
+Sun Apr 19 12:38:02 AM UTC 2026: 
+ tests:  17|0
+total_score: 60/60
+e8a87c1
+Sun Apr 19 12:53:27 AM UTC 2026: 
+ tests:  17|0
+total_score: 60/60
+0270bab
